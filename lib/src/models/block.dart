@@ -1,6 +1,6 @@
-import 'fields.dart';
+import 'field.dart';
 
-/// Enum to represent different types of blocks
+/// Enum to represent different types of blocks.
 enum BlockType {
   text('text'),
   textArea('textArea'),
@@ -9,10 +9,10 @@ enum BlockType {
   list('list'),
   group('group');
 
-  /// Enum to represent different types of blocks
+  /// Enum to represent different types of blocks.
   const BlockType(this.value);
 
-  /// json value from api response
+  /// Json value from api response
   final String value;
 }
 
@@ -25,29 +25,29 @@ extension BlockTypeByValue<T extends BlockType> on Iterable<T> {
   }
 }
 
-/// {@template Block}
-/// An abstract class to handle different types of blocks in block library
+/// {@template Block.Block}
+/// An abstract class to handle different types of blocks in block library.
 /// {@endtemplate}
 abstract class Block<T> {
-  // Block Name
+  /// Block Name
   final String blockName;
 
   /// Block Type
   final BlockType blockType;
 
-  // Description of the block
+  /// Description of the block
   final String? blockDescription;
 
-  // Id of the block
+  /// Id of the block
   final String id;
 
-  // BlockData of type [T]
+  /// BlockData of type [T]
   final T blockData;
 
-  // Bool for nested blocks
+  /// Bool for nested blocks
   final bool nested;
 
-  /// {@macro Block}
+  /// {@macro Block.Block}
   const Block({
     required this.blockName,
     required this.blockType,
@@ -110,7 +110,7 @@ class TextBlock extends Block<String?> {
 }
 
 /// {@template Block.GroupBlock}
-/// A Block of type Map<String, Field> for handling [BlockType.group] blocks
+/// A Block of type Map<String, Field> for handling [BlockType.group] blocks.
 /// {@endtemplate}
 class GroupBlock extends Block<Map<String, Field>> {
   /// {@macro Block.GroupBlock}
@@ -154,7 +154,7 @@ class GroupBlock extends Block<Map<String, Field>> {
 }
 
 /// {@template Block.ListBlock}
-/// A Block of type List<MultiField> for handling [BlockType.list] blocks
+/// A Block of type List<MultiField> for handling [BlockType.list] blocks.
 /// {@endtemplate}
 class ListBlock extends Block<List<MultiField>> {
   /// {@macro Block.ListBlock}

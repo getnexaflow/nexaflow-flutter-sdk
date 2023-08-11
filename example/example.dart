@@ -6,7 +6,6 @@ void main() async {
   try {
     List<Website> websites = await sdk.getAllWebsites();
     Website website = await sdk.getWebsiteById(websiteId: websites.first.id);
-
     print(website.id);
     print(website.pages.length);
   } catch (e) {

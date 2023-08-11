@@ -1,10 +1,19 @@
 import 'page.dart';
 
+/// {@template Website.Website}
+/// A representation of a website, containing metadata and pages.
+/// {@endtemplate}
 class Website {
+  /// Id of the website.
   final String id;
+
+  /// Metadata associated with the website.
   final Metadata metadata;
+
+  /// The list of pages within the website.
   final List<Page> pages;
 
+  /// {@macro Website.Website}
   Website({
     required this.id,
     required this.metadata,
@@ -30,11 +39,20 @@ class Website {
   }
 }
 
+/// {@template Website.Metadata}
+/// A representation of a website, containing metadata and pages.
+/// {@endtemplate}
 class Metadata {
+  /// Name of the website.
   final String siteName;
+
+  /// URL of the website.
   final String siteUrl;
+
+  /// Description of the website.
   final String? description;
 
+  /// {@macro Website.Metadata}
   Metadata({
     required this.siteName,
     required this.siteUrl,

@@ -1,13 +1,25 @@
 import 'block.dart';
 
+/// {@template Page.Page}
+/// A representation of a web page.
+/// {@endtemplate}
 class Page {
+  /// Id of the page.
   final String id;
+
+  /// The list of blocks that make up the content of the page.
   final List<Block> blocks;
 
+  /// Metadata associated with the page.
   final PageMetadata metadata;
+
+  /// Timestamp when the page was last updated.
   final String updatedAt;
+
+  /// The id of the website to which the page belongs.
   final String websiteId;
 
+  /// {@macro Page.Page}
   const Page({
     required this.id,
     required this.blocks,
@@ -16,6 +28,7 @@ class Page {
     required this.websiteId,
   });
 
+  /// Maps a JSON block to a specific [Block] subtype.
   static Block mapToBlock(Map<String, dynamic> block) {
     switch (BlockType.values.byName(block['blockType'])) {
       case BlockType.text:
@@ -59,12 +72,23 @@ class Page {
   }
 }
 
+/// {@template Page.PageMetadata}
+/// A representation of a web page.
+/// {@endtemplate}
 class PageMetadata {
+  /// Title of the page.
   final String title;
+
+  /// Slug of the page.
   final String slug;
+
+  /// Status of the page.
   final String status;
+
+  /// Content type of the page.
   final String? contentType;
 
+  /// {@macro Page.PageMetadata}
   const PageMetadata({
     required this.title,
     required this.slug,

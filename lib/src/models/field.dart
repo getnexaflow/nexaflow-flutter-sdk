@@ -1,6 +1,6 @@
 import 'block.dart';
 
-/// Enum to represent different types of fields
+/// Enum to represent different types of fields.
 enum FieldType {
   text('text'),
   textArea('textArea'),
@@ -9,10 +9,10 @@ enum FieldType {
   nestedList('nestedList'),
   nestedGroup('nestedList');
 
-  /// Enum to represent different types of fields
+  /// Enum to represent different types of fields.
   const FieldType(this.value);
 
-  /// json value from api response
+  /// Json value from api response
   final String value;
 
   /// Bool to check if field is nested
@@ -29,19 +29,28 @@ extension FieldTypeByValue<T extends FieldType> on Iterable<T> {
   }
 }
 
-/// {@template Field}
-/// A class for handling fields
+/// {@template Field.Field}
+/// A class for handling fields.
 ///
-/// Primarly used to handle fields in blocks
+/// Primarly used to handle fields in blocks.
 /// {@endtemplate}
 class Field {
+  /// Name of the field.
   final String fieldName;
+
+  /// Type of the field.
   final FieldType fieldType;
+
+  /// Description of the field.
   final String? fieldDescription;
+
+  /// Id of the field.
   final String id;
+
+  /// Data associated with the field.
   final String? blockData;
 
-  /// {@macro Field}
+  /// {@macro Field.Field}
   Field({
     required this.fieldName,
     required this.fieldType,
@@ -75,17 +84,22 @@ class Field {
   }
 }
 
-/// {@template MultiField}
-/// A field which contains multiple subfields
+/// {@template Field.MultiField}
+/// A field which contains multiple subfields.
 ///
-/// Primarly used to handle fields in [BlockType.list]
+/// Primarly used to handle fields in [BlockType.list].
 /// {@endtemplate}
 class MultiField {
+  /// ListID of the list containing the multi-fields.
   final String listId;
+
+  /// Id of the Field.
   final String? id;
+
+  /// Map of subfields within the multi-field.
   final Map<String, Field> fields;
 
-  /// {@macro MultiField}
+  /// {@macro Field.MultiField}
   const MultiField({
     required this.listId,
     this.id,
