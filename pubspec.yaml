@@ -1,0 +1,24 @@
+name: nexaflow_flutter_sdk
+description: Flutter SDK for Nexaflow.
+version: 0.0.1
+homepage: https://github.com/getnexaflow/nexfalow-flutter-sdk.git
+
+environment:
+  sdk: '>=3.0.5 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  # To add assets to your package, add an assets section, like this:
+  # assets:
+  #   - images/a_dot_burr.jpeg
+  #   - images/a_dot_ham.jpeg
