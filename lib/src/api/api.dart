@@ -159,8 +159,9 @@ class NexaflowSdk {
   Future<Map<String, dynamic>> submitCorsRequest({
     required String id,
     Method method = Method.get,
-    required Map<String, String> data,
+    Map<String, String>? data,
   }) async {
+    assert(method == Method.get || data != null);
     try {
       http.Response response = await _client.post(
         Uri.parse('$baseUrl/cors/$id'),
